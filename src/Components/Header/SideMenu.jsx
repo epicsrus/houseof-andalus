@@ -114,8 +114,8 @@ function SideMenu({ isOpen, onClose }) {
                                 </div>
                                 <div className="details">
                                     <p>
-                                        <Link href="mailto:hello@houseofandalus.com" className="info-box_link">
-                                            hello@houseofandalus.com
+                                        <Link href="mailto:info@houseofandalus.com" className="info-box_link">
+                                            info@houseofandalus.com
                                         </Link>
                                     </p>
                                     {/* <p>

@@ -49,7 +49,7 @@ function GetInTouch() {
                             <div className="about-contact-details">
                                 <h6 className="box-title">Email Address</h6>
                                 <p className="about-contact-details-text">
-                                    <a href="mailto:hello@houseofandalus.com">hello@houseofandalus.com</a>
+                                    <a href="mailto:info@houseofandalus.com">info@houseofandalus.com</a>
                                 </p>
                                 {/* <p className="about-contact-details-text">
                                     <a href="mailto:support24@tourm.com">support24@tourm.com</a>

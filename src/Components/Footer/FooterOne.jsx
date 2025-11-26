@@ -116,10 +116,10 @@ function FooterOne() {
                                         <div className="details">
                                             <p>
                                                 <Link
-                                                    href="mailto:hello@houseofandalus.com"
+                                                    href="mailto:info@houseofandalus.com"
                                                     className="info-box_link"
                                                 >
-                                                    hello@houseofandalus.com
+                                                    info@houseofandalus.com
                                                 </Link>
                                             </p>
                                             {/* <p>
