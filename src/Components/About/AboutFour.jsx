@@ -23,14 +23,14 @@ function AboutFour() {
                <div className="col-xl-5">
                   <div className="ps-xl-4">
                      <div className="title-area mb-20">
-                        {/* <span className="sub-title style1 ">Welcome To House of Andalus</span> */}
+                        <span className="sub-title style1 ">Meet</span>
                         <h2 className="sec-title mb-20 pe-xl-5 me-xl-5 heading">
-                           Meet Ajmal Masroor & Henrietta Szovati
+                           Henrietta Szovati & Ajmal Masroor 
                         </h2>
                      </div>
                      
                      <p className="pe-xl-5">
-                        Welcome to our shared journey. We are Ajmal Masroor and Henrietta Szovati, partners in both life and purpose, driven by a deep commitment to personal growth, 
+                        Welcome to our shared journey. We are Henrietta Szovati and Ajmal Masroor, partners in both life and purpose, driven by a deep commitment to personal growth, 
                         soulful living, and meaningful connection. Our paths have woven together a tapestry of experiences, blending Ajmal’s background in community leadership, public 
                         speaking and spiritual guidance with Henrietta’s expertise in coaching, writing and facilitating transformative conversations. Together, we believe in the power 
                         of solitude and reflection, as well as the richness found in community and dialogue.
@@ -110,14 +110,15 @@ function AboutFour() {
              <div className=" justify-content-center founders-layout">
                <div className="col-xl-11">
                  <div className="founders-body text-only">
+                  {/* Henrietta block */}
+                   <div className="founder-block founder-henrietta" id="henrietta-story">
+                     <p className="founders-text">Henrietta brings a gentle yet incisive curiosity to everything she does. With a background in philosophy, writing, and coaching, she is passionate about helping others discover their inner truths and navigate the complexities of life. Her love for nature and quiet contemplation infuses her work with authenticity and depth, as reflected in her writing and coaching work set amidst the beauty of the mountains.</p>
+                   </div>
                    {/* Ajmal block */}
                    <div className="founder-block founder-ajmal">
                      <p className="founders-text lead ">Ajmal’s story is one of service, resilience and advocacy. Known for his work as an imam, broadcaster and educator, he has dedicated his life to fostering understanding and building bridges across cultures and faiths. His approach is rooted in compassion and a thirst for justice, inspired by the landscapes of both his heritage and his travels.</p>
                    </div>
-                   {/* Henrietta block */}
-                   <div className="founder-block founder-henrietta" id="henrietta-story">
-                     <p className="founders-text">Henrietta brings a gentle yet incisive curiosity to everything she does. With a background in philosophy, writing, and coaching, she is passionate about helping others discover their inner truths and navigate the complexities of life. Her love for nature and quiet contemplation infuses her work with authenticity and depth, as reflected in her writing and coaching work set amidst the beauty of the mountains.</p>
-                   </div>
+                   
                    <div className="">
                      <p className="founders-text vision">Together, we create spaces—both virtual and real—where individuals can explore, reflect, and grow. Our shared vision is to inspire people to embrace life wit all its complexities and view it as a source of renewal, to listen deeply to themselves and the world, and to live with greater courage and clarity. Whether through our retreats, workshops, talks, or our writing, we invite you to join us in discovering the lessons and joys found in everyday moments and in the changing seasons of our lives.</p>
                    </div>
