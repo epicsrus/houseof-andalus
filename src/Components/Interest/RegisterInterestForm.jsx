@@ -114,7 +114,7 @@ function RegisterInterestForm() {
             <div className="text-center mt-40">
               <p className="about-contact-details-text mb-0">
                 Prefer direct contact? Email us at{' '}
-                <Link href="mailto:hello@houseofandalus.com">hello@houseofandalus.com</Link>
+                <Link href="mailto:info@houseofandalus.com">info@houseofandalus.com</Link>
               </p>
             </div>
           </div>

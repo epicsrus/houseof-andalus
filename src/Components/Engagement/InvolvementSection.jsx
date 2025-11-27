@@ -25,7 +25,7 @@ const involvementCards = [
     title: 'Ambassador',
     text: 'Represent House of Andalus in events, communities and platforms; share its living heritage and story.',
     href: '/book-your-stay/ambassador-form',
-    cta: 'Apply as Ambassador',
+    cta: 'Become an Ambassador',
     icon: 'fa-bullhorn'
   }
 ];

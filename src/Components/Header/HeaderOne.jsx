@@ -344,10 +344,10 @@ function HeaderOne() {
                                                 <Link href="#">Blog</Link>
                                                 <ul className="sub-menu">
                                                     <li>
-                                                        <Link href="/blog">Blog</Link>
+                                                        <Link href="https://henriettaszovati.com/">Follow Henrietta blog </Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/blog/1">Blog Details</Link>
+                                                        <Link href="https://thehouseofandalus.substack.com/">Development of the House</Link>
                                                     </li>
                                                 </ul>
                                             </li>

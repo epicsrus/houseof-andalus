@@ -130,10 +130,10 @@ function FooterFour() {
                                         <div className="details">
                                             <p>
                                                 <a
-                                                    href="mailto:hello@houseofandalus.com"
+                                                    href="mailto:info@houseofandalus.com"
                                                     className="info-box_link"
                                                 >
-                                                    hello@houseofandalus.com
+                                                    info@houseofandalus.com
                                                 </a>
                                             </p>
                                             {/* <p>
