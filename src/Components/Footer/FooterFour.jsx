@@ -93,7 +93,7 @@ function FooterFour() {
                                             <Link href="/the-house">The House</Link>
                                         </li>
                                         <li>
-                                            <Link href="/book-your-stay">Book your Stay</Link>
+                                            <Link href="/book-your-stay/booking-form">Book your Stay</Link>
                                         </li>
                                         <li>
                                             <Link href="/contact">Contact Us</Link>
