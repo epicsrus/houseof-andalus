@@ -38,11 +38,14 @@ function FooterOne() {
                                 <div className="th-widget-about">
                                     <div className="about-logo">
                                         <Link href="/">
-                                            <img src="/assets/img/brown-newlogo.png" alt="Tourm" width={100}  />
+                                            <img 
+                                            // src="/assets/img/brown-newlogo.png"
+                                            src="/assets/img/redlogo.png" 
+                                             alt="Tourm" width={100}  />
                                         </Link>
                                     </div>
                                     <p className="about-text">
-                                        Beautifully weave Andalusian heritage with global vision. Purposefully create sanctuaries for reflection and growth.
+                                        Weaving andalusi heritage with global vision beautifully; a purposefully created sanctuary for reflection and growth
                                     </p>
                                     <div className="th-social">
                                         <Link href="https://www.facebook.com/">

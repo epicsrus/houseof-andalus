@@ -22,7 +22,7 @@ function GalleryThree() {
         <div className="overflow-hidden space-bottom">
             <div className="container">
                 <div className="title-area text-center">
-                    <span className="sub-title">Make Your Tour More Pleasure</span>
+                    <span className="sub-title">Make Your Tour More Meaningful</span>
                     <h2 className="sec-title">Recent Gallery</h2>
                 </div>
                 <div className="row gy-24 gx-24 justify-content-center">

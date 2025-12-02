@@ -23,7 +23,7 @@ function GalleryOne() {
         <div className="gallery-area">
             <div className="container th-container ">
                 <div className="title-area text-center">
-                    <span className="sub-title">Make Your Tour More Pleasure</span>
+                    <span className="sub-title">Make Your Tour More Meaningful</span>
                     <h2 className="sec-title">Recent Gallery</h2>
                 </div>
                 <div className="row gy-10 gx-10 justify-content-center align-items-center">

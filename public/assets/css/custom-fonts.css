@@ -55,7 +55,13 @@ p, span, a, li, label, input, textarea, button, small, td, th, div {
 /* Elevate paragraph weight for better readability */
 p { font-weight: 600 !important; letter-spacing: 1px; }
 strong, b, .fw-bold { font-weight: 900 !important; }
-em, i:not(.fa):not(.fa-solid):not(.fa-regular):not(.fa-light):not(.fa-brands):not(.fa-thin) { font-style: italic; }
+
+/* Ensure Font Awesome icons are NOT italic */
+i.fa, i.fas, i.far, i.fal, i.fab, i.fad, i.fat,
+i[class*="fa-"] {
+  font-style: normal !important;
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+}
 
 /* Heading reinforcement in case other CSS overrides later */
 h1, h2, h3, h4, h5, h6 { font-weight: 700 !important; }
