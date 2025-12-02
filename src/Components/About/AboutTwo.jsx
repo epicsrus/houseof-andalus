@@ -66,7 +66,7 @@ function AboutTwo() {
                                         <img src="/assets/img/icon/about_1_3.svg" alt="" />
                                     </div>
                                     <div className="about-item_centent">
-                                        <h5 className="box-title">Professional Guide</h5>
+                                        <h5 className="box-title">Professional Guidance</h5>
                                         <p className="about-item_text">
                                             There are many variations of passages of available but the
                                             majority.

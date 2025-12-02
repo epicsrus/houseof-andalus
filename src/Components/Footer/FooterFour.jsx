@@ -93,7 +93,7 @@ function FooterFour() {
                                             <Link href="/the-house">The House</Link>
                                         </li>
                                         <li>
-                                            <Link href="/book-your-stay">Book your Stay</Link>
+                                            <Link href="/book-your-stay/booking-form">Book your Stay</Link>
                                         </li>
                                         <li>
                                             <Link href="/contact">Contact Us</Link>
@@ -112,8 +112,8 @@ function FooterFour() {
                                         </div>
                                         <div className="details">
                                             <p>
-                                                <a href="tel:+34 000 000 000" className="info-box_link">
-                                                    +34 000 000 000
+                                                <a href="tel:00447872553256" className="info-box_link">
+                                                    00447872553256
                                                 </a>
                                             </p>
                                             {/* <p>
@@ -151,7 +151,8 @@ function FooterFour() {
                                             <img src="/assets/img/icon/location-dot.svg" alt="img" />
                                         </div>
                                         <div className="details">
-                                            <p>Andalucia, Spain x7792 street</p>
+                                            {/* <p>Andalucia, Spain x7792 street</p> */}
+                                            <p>Andalucia, Spain</p>
                                         </div>
                                     </div>
                                 </div>

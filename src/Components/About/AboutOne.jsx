@@ -59,7 +59,7 @@ function AboutOne() {
                                         <img src="/assets/img/icon/guide.svg" alt="" />
                                     </div>
                                     <div className="about-item_centent">
-                                        <h5 className="box-title">Spiritual & Professional Guide</h5>
+                                        <h5 className="box-title">Spiritual & Professional Guidance</h5>
                                         <p className="about-item_text">
                                           Guided reflection for soulful discovery.
                                         </p>

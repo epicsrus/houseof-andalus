@@ -38,11 +38,14 @@ function FooterOne() {
                                 <div className="th-widget-about">
                                     <div className="about-logo">
                                         <Link href="/">
-                                            <img src="/assets/img/brown-newlogo.png" alt="Tourm" width={100}  />
+                                            <img 
+                                            // src="/assets/img/brown-newlogo.png"
+                                            src="/assets/img/redlogo.png" 
+                                             alt="Tourm" width={100}  />
                                         </Link>
                                     </div>
                                     <p className="about-text">
-                                        Beautifully weave Andalusian heritage with global vision. Purposefully create sanctuaries for reflection and growth.
+                                        Weaving andalusi heritage with global vision beautifully; a purposefully created sanctuary for reflection and growth
                                     </p>
                                     <div className="th-social">
                                         <Link href="https://www.facebook.com/">
@@ -79,7 +82,7 @@ function FooterOne() {
                                             <Link href="/the-house">The House</Link>
                                         </li>
                                         <li>
-                                            <Link href="/book-your-stay">Book your Stay</Link>
+                                            <Link href="/book-your-stay/booking-form">Book your Stay</Link>
                                         </li>
                                         <li>
                                             <Link href="/contact">Contact Us</Link>
@@ -98,8 +101,8 @@ function FooterOne() {
                                         </div>
                                         <div className="details">
                                             <p>
-                                                <Link href="tel:+34 000 000 000" className="info-box_link">
-                                                    +34 000 000 000
+                                                <Link href="tel:00447872553256" className="info-box_link">
+                                                    00447872553256
                                                 </Link>
                                             </p>
                                             {/* <p>
@@ -137,7 +140,9 @@ function FooterOne() {
                                             <img src="/assets/img/icon/location-dot.svg" alt="img" />
                                         </div>
                                         <div className="details">
-                                            <p>Andalucia, Spain x7792 street</p>
+                                            {/* <p>Andalucia, Spain x7792 street</p> */}
+                                            <p>Andalucia, Spain</p>
+
                                         </div>
                                     </div>
                                 </div>

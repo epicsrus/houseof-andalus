@@ -41,7 +41,7 @@ function AboutThree() {
                                 {[
                                     { img: "about_1_1.svg", title: "Exclusive Trip" },
                                     { img: "about_1_2.svg", title: "Safety First Always" },
-                                    { img: "about_1_3.svg", title: "Professional Guide" }
+                                    { img: "about_1_3.svg", title: "Professional Guidance" }
                                 ].map((item, index) => (
                                     <div className="about-item style2" key={index}>
                                         <div className="about-item_img">
