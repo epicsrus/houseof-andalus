@@ -1,5 +1,5 @@
-import '../src/index.css';
-import '../src/App.css';
+// import '../src/index.css';
+import './App.css';
 
 export const metadata = {
   title: 'House of Andalus',
