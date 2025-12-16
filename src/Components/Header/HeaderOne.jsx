@@ -238,6 +238,9 @@ function HeaderOne() {
                                                     <li>
                                                         <Link href="/book-your-stay/House-of-andulus-retreats">House of Andulus Retreat</Link>
                                                     </li>
+                                                    <li>
+                                                        <Link href="/book-and-olive-tree">Book Olive Tree </Link>
+                                                    </li>
                                                 </ul>
                                             </li>
                                             {/* <li className="menu-item-has-children">
@@ -368,8 +371,8 @@ function HeaderOne() {
                                 </div>
                                 <div className="col-auto d-none d-xl-block">
                                     <div className="header-button">
-                                        <Link href="/contact" className="th-btn style3 th-icon">
-                                            Book Now
+                                        <Link href="/book-and-olive-tree" className="th-btn style3 th-icon">
+                                            Book a Tree
                                         </Link>
                                     </div>
                                 </div>
