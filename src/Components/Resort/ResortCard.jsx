@@ -28,13 +28,13 @@ function ResortCard(props) {
                                 <span className="rating">4.8</span>(4.8 Rating)
                             </span>
                         </div>
-                        <a href="#" className="woocommerce-review-link" onClick={(e)=>e.preventDefault()}>
+                        <a href="#" className="woocommerce-review-link" onClick={(e) => e.preventDefault()}>
                             (<span className="count">4.8</span>
                             Rating)
                         </a>
                     </div>
                     <h4 className="resort-price">
-                        <span className="currency">From {resortPrice ? resortPrice : '$350.00'}</span>/per Night
+                        <span className="currency">From {resortPrice ? resortPrice : '£350.00'}</span>/per Night
                     </h4>
                     <p className="resort-text">
                         Focused on providing a serene, relaxing environment with natural

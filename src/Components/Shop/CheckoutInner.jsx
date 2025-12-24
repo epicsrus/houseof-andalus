@@ -39,7 +39,7 @@ function CheckoutInner() {
                                     <div className="form-group">
                                         <button type="button" className="th-btn">Login</button>
                                         <p className="mt-3 mb-0">
-                                            <a className="text-reset" href="#" onClick={(e)=>e.preventDefault()}>Lost your password?</a>
+                                            <a className="text-reset" href="#" onClick={(e) => e.preventDefault()}>Lost your password?</a>
                                         </p>
                                     </div>
                                 </form>
@@ -295,7 +295,7 @@ function CheckoutInner() {
                                 <td data-title="Price">
                                     <span className="amount">
                                         <bdi>
-                                            <span>$</span>18
+                                            <span>£</span>18
                                         </bdi>
                                     </span>
                                 </td>
@@ -305,7 +305,7 @@ function CheckoutInner() {
                                 <td data-title="Total">
                                     <span className="amount">
                                         <bdi>
-                                            <span>$</span>18
+                                            <span>£</span>18
                                         </bdi>
                                     </span>
                                 </td>
@@ -317,7 +317,7 @@ function CheckoutInner() {
                                 <td data-title="Subtotal" colSpan={4}>
                                     <span className="woocommerce-Price-amount amount">
                                         <bdi>
-                                            <span className="woocommerce-Price-currencySymbol">$</span>
+                                            <span className="woocommerce-Price-currencySymbol">£</span>
                                             281.05
                                         </bdi>
                                     </span>
@@ -336,7 +336,7 @@ function CheckoutInner() {
                                     <strong>
                                         <span className="woocommerce-Price-amount amount">
                                             <bdi>
-                                                <span className="woocommerce-Price-currencySymbol">$</span>
+                                                <span className="woocommerce-Price-currencySymbol">£</span>
                                                 281.05
                                             </bdi>
                                         </span>

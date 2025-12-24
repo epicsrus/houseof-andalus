@@ -149,7 +149,7 @@ function TourDetailsMain() {
                                     Explore the Beauty of Maldives and enjoy
                                 </h2>
                                 <h4 className="tour-price">
-                                    <span className="currency">$189,25</span>/Person
+                                    <span className="currency">£189.25</span>/Person
                                 </h4>
                                 <p className="box-text mb-30">
                                     voluptatem accusantium doloremque laudantium, totam rem aperiam,

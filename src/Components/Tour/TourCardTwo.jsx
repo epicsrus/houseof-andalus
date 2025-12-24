@@ -11,7 +11,7 @@ function TourCardTwo(props) {
             </div>
             <div className="tour-content">
                 <h3 className="box-title">
-                   <Link href="/tour-details">{tourTitle ? tourTitle : 'Greece Tour Package'}</Link>
+                    <Link href="/tour-details">{tourTitle ? tourTitle : 'Greece Tour Package'}</Link>
                 </h3>
                 <div className="tour-rating">
                     <div
@@ -35,7 +35,7 @@ function TourCardTwo(props) {
                     </Link>
                 </div>
                 <h4 className="tour-box_price">
-                    <span className="currency">{tourPrice ? tourPrice : '$980.00'}</span>/Person
+                    <span className="currency">{tourPrice ? tourPrice : '£980.00'}</span>/Person
                 </h4>
                 <div className="tour-action">
                     <span>

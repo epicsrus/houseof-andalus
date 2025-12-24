@@ -42,7 +42,7 @@ function BannerTwo() {
   };
   return (
     <div className="hero-2" id="hero">
-      <div className="hero2-overlay" style={{ backgroundImage: 'url(/assets/img/bg/line-pattern.png)'}} />
+      <div className="hero2-overlay" style={{ backgroundImage: 'url(/assets/img/bg/line-pattern.png)' }} />
       {/* Main Swiper */}
       <Swiper
         modules={[Pagination, Navigation, Thumbs, EffectFade, Autoplay]} // Added necessary modules
@@ -166,7 +166,7 @@ function BannerTwo() {
               </div>
               <div className="hero-card_content">
                 <h3 className="box-title">Mountain Tour</h3>
-                <h4 className="hero-card_price"><span className="currency">$850.00</span>/Person</h4>
+                <h4 className="hero-card_price"><span className="currency">£850.00</span>/Person</h4>
                 <span className="d-block"><i className="fa-light fa-clock" />7 Days</span>
                 <Link href="/destination/1" className="th-btn style2">Book Now</Link>
               </div>
@@ -181,7 +181,7 @@ function BannerTwo() {
               </div>
               <div className="hero-card_content">
                 <h3 className="box-title">Yachts Tour</h3>
-                <h4 className="hero-card_price"><span className="currency">$750.00</span>/Person</h4>
+                <h4 className="hero-card_price"><span className="currency">£750.00</span>/Person</h4>
                 <span className="d-block"><i className="fa-light fa-clock" />6 Days</span>
                 <Link href="/destination/1" className="th-btn style2">Book Now</Link>
               </div>
@@ -196,7 +196,7 @@ function BannerTwo() {
               </div>
               <div className="hero-card_content">
                 <h3 className="box-title">Mountain Tour</h3>
-                <h4 className="hero-card_price"><span className="currency">$850.00</span>/Person</h4>
+                <h4 className="hero-card_price"><span className="currency">£850.00</span>/Person</h4>
                 <span className="d-block"><i className="fa-light fa-clock" />7 Days</span>
                 <Link href="/destination/1" className="th-btn style2">Book Now</Link>
               </div>
@@ -206,7 +206,7 @@ function BannerTwo() {
         {/* Add more SwiperSlides here as needed */}
       </Swiper>
       <div className="scroll-down">
-  <Link href="/#destination-sec" onClick={handleScroll} className="scroll-wrap">
+        <Link href="/#destination-sec" onClick={handleScroll} className="scroll-wrap">
           <span>
             <img src="/assets/img/icon/down-arrow.svg" alt="" />
           </span>

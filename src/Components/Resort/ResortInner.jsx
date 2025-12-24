@@ -7,7 +7,7 @@ const resorts = [
     id: 1,
     image: "/assets/img/normal/resort_1_1.jpg",
     title: "Ocean View Resort",
-    price: "$350.00",
+    price: "£350.00",
     rating: 4.8,
     capacity: "6 Person",
     size: "45 m²",
@@ -18,7 +18,7 @@ const resorts = [
     id: 2,
     image: "/assets/img/normal/resort_1_2.jpg",
     title: "Premium Forest Resort",
-    price: "$250.00",
+    price: "£250.00",
     rating: 4.8,
     capacity: "6 Person",
     size: "45 m²",
@@ -29,7 +29,7 @@ const resorts = [
     id: 3,
     image: "/assets/img/normal/resort_1_3.jpg",
     title: "Deluxe Hilltop Resort",
-    price: "$350.00",
+    price: "£350.00",
     rating: 4.8,
     capacity: "6 Person",
     size: "45 m²",
@@ -72,7 +72,7 @@ function ResortInner() {
                       Rated <strong className="rating">{resort.rating}</strong> out of 5
                     </span>
                   </div>
-                  <a href="#" className="woocommerce-review-link" onClick={(e)=>e.preventDefault()}>
+                  <a href="#" className="woocommerce-review-link" onClick={(e) => e.preventDefault()}>
                     (<span className="count">{resort.rating}</span> Rating)
                   </a>
                 </div>

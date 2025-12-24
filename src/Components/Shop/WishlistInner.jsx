@@ -87,7 +87,7 @@ function WishlistInner() {
                                         <td className="product-price">
                                             <span className="woocommerce-Price-amount amount">
                                                 <bdi>
-                                                    <span className="woocommerce-Price-currencySymbol">$</span>
+                                                    <span className="woocommerce-Price-currencySymbol">£</span>
                                                     {item.price.toFixed(2)}
                                                 </bdi>
                                             </span>
@@ -95,7 +95,7 @@ function WishlistInner() {
                                                 <del>
                                                     <span className="woocommerce-Price-amount amount">
                                                         <bdi>
-                                                            <span className="woocommerce-Price-currencySymbol">$</span>
+                                                            <span className="woocommerce-Price-currencySymbol">£</span>
                                                             {item.oldPrice.toFixed(2)}
                                                         </bdi>
                                                     </span>

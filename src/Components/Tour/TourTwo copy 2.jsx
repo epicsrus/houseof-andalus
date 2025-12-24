@@ -25,7 +25,7 @@ const TourItem = ({ image, title, link, rating, price, duration, bookLink }) => 
                 </Link>
             </div>
             <h4 className="tour-box_price">
-                <span className="currency">${price}</span>/Person
+                <span className="currency">£{price}</span>/Person
             </h4>
             <div className="tour-action">
                 <span>
@@ -46,7 +46,7 @@ function TourTwo() {
         <section
             className="tour-area3 position-relative bg-top-center overflow-hidden space"
             id="service-sec"
-            style={{ backgroundImage: "url('/assets/img/bg/tour_bg_1.jpg", backgroundRepeat:"no-repeat" }}
+            style={{ backgroundImage: "url('/assets/img/bg/tour_bg_1.jpg", backgroundRepeat: "no-repeat" }}
         >
             <div className="container">
                 <div className="row justify-content-center">

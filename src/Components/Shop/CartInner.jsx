@@ -10,7 +10,7 @@ function CartInner() {
     ]);
 
     const updateQuantity = (id, amount) => {
-        setCartItems(cartItems.map(item => 
+        setCartItems(cartItems.map(item =>
             item.id === id ? { ...item, quantity: Math.max(1, item.quantity + amount) } : item
         ));
     };
@@ -53,7 +53,7 @@ function CartInner() {
                                         </Link>
                                     </td>
                                     <td>
-                                        <span className="amount"><bdi><span>$</span>{item.price}</bdi></span>
+                                        <span className="amount"><bdi><span>£</span>{item.price}</bdi></span>
                                     </td>
                                     <td>
                                         <div className="quantity">
@@ -67,7 +67,7 @@ function CartInner() {
                                         </div>
                                     </td>
                                     <td>
-                                        <span className="amount"><bdi><span>$</span>{item.price * item.quantity}</bdi></span>
+                                        <span className="amount"><bdi><span>£</span>{item.price * item.quantity}</bdi></span>
                                     </td>
                                     <td>
                                         <button onClick={() => removeItem(item.id)} className="remove">
@@ -97,7 +97,7 @@ function CartInner() {
                                 <tr>
                                     <td>Cart Subtotal</td>
                                     <td>
-                                        <span className="amount"><bdi><span>$</span>{cartTotal}</bdi></span>
+                                        <span className="amount"><bdi><span>£</span>{cartTotal}</bdi></span>
                                     </td>
                                 </tr>
                             </tbody>
@@ -106,7 +106,7 @@ function CartInner() {
                                     <td>Order Total</td>
                                     <td>
                                         <strong>
-                                            <span className="amount"><bdi><span>$</span>{cartTotal}</bdi></span>
+                                            <span className="amount"><bdi><span>£</span>{cartTotal}</bdi></span>
                                         </strong>
                                     </td>
                                 </tr>
