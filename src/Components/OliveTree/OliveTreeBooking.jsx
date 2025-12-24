@@ -1,13 +1,18 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+
+import pic1 from '../../../public/assets/img/Book your stay/BuyOlive1.jpeg'
+import pic2 from '../../../public/assets/img/Book your stay/BuyOlive2.jpeg'
+
 
 const treeOptions = [
   { count: 1, price: 50, title: "Book 1 Olive Tree" },
-  { count: 2, price: 95, title: "Book 2 Olive Trees" },
-  { count: 3, price: 135, title: "Book 3 Olive Trees" },
-  { count: 4, price: 170, title: "Book 4 Olive Trees" },
-  { count: 5, price: 200, title: "Book 5 Olive Trees" },
+  { count: 3, price: 125, title: "Book 3 Olive Trees" },
+  { count: 5, price: 215, title: "Book 5 Olive Trees" },
+  { count: 10, price: 450, title: "Book 10 Olive Trees" },
+  { count: 25, price: 1150, title: "Book 25 Olive Trees" },
 ];
 
 const OliveTreeBooking = () => {
@@ -34,14 +39,25 @@ const OliveTreeBooking = () => {
             <div className="col-xl-10">
               <div className="story-card">
                 <div className="story-header">
-                  <div className="olive-branch-icon">
-                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-                      <path d="M30 10C30 10 25 15 25 22C25 29 30 32 30 32C30 32 35 29 35 22C35 15 30 10 30 10Z" fill="#8B7355" opacity="0.3"/>
-                      <path d="M30 32C30 32 35 35 35 42C35 49 30 54 30 54C30 54 25 49 25 42C25 35 30 32 30 32Z" fill="#8B7355" opacity="0.3"/>
-                      <path d="M20 25C20 25 15 28 15 33C15 38 20 40 20 40C20 40 25 38 25 33C25 28 20 25 20 25Z" fill="#8B7355" opacity="0.2"/>
-                      <path d="M40 25C40 25 45 28 45 33C45 38 40 40 40 40C40 40 35 38 35 33C35 28 40 25 40 25Z" fill="#8B7355" opacity="0.2"/>
-                      <line x1="30" y1="10" x2="30" y2="54" stroke="#8B7355" strokeWidth="2"/>
-                    </svg>
+                  <div className="sliding-images">
+                    <div className="image-wrapper slide-left">
+                      <Image 
+                        src={pic1} 
+                        alt="Olive Tree 1" 
+                        className="slide-image"
+                        width={350}
+                        height={350}
+                      />
+                    </div>
+                    <div className="image-wrapper slide-right">
+                      <Image 
+                        src={pic2} 
+                        alt="Olive Tree 2" 
+                        className="slide-image"
+                        width={350}
+                        height={350}
+                      />
+                    </div>
                   </div>
                   <h3 className="story-title">The Olive Garden of Andalus</h3>
                   <div className="story-subtitle">Why the Olive Tree</div>
@@ -221,15 +237,65 @@ const OliveTreeBooking = () => {
           position: relative;
         }
 
-        .olive-branch-icon {
-          display: inline-flex;
-          margin-bottom: 20px;
-          animation: gentle-sway 4s ease-in-out infinite;
+        .sliding-images {
+          margin: 2rem 0;
+          display: flex;
+          justify-content: center;
+          gap: 4rem;
+          min-height: 380px;
+          align-items: center;
         }
-
-        @keyframes gentle-sway {
-          0%, 100% { transform: rotate(-2deg); }
-          50% { transform: rotate(2deg); }
+        
+        .image-wrapper {
+          animation-duration: 1.2s;
+          animation-timing-function: ease-out;
+          animation-fill-mode: both;
+        }
+        
+        .slide-image {
+          width: 350px !important;
+          height: 350px !important;
+          border-radius: 50%;
+          object-fit: cover;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+          display: block !important;
+          transition: transform 0.3s ease;
+        }
+        
+        .image-wrapper:hover .slide-image {
+          transform: scale(1.05) rotate(5deg);
+        }
+        
+        .slide-left {
+          animation-name: slideFromLeft;
+          animation-delay: 0s;
+        }
+        
+        .slide-right {
+          animation-name: slideFromRight;
+          animation-delay: 0.6s;
+        }
+        
+        @keyframes slideFromLeft {
+          0% {
+            transform: translateX(-400px) rotate(-30deg);
+            opacity: 0;
+          }
+          100% {
+            transform: translateX(0) rotate(0deg);
+            opacity: 1;
+          }
+        }
+        
+        @keyframes slideFromRight {
+          0% {
+            transform: translateX(400px) rotate(30deg);
+            opacity: 0;
+          }
+          100% {
+            transform: translateX(0) rotate(0deg);
+            opacity: 1;
+          }
         }
 
         .story-title {
@@ -462,6 +528,25 @@ const OliveTreeBooking = () => {
 
           .section-heading {
             font-size: 26px;
+          }
+          
+          .sliding-images {
+            gap: 2rem;
+            min-height: 280px;
+            flex-direction: column;
+          }
+          
+          .slide-image {
+            width: 250px !important;
+            height: 250px !important;
+          }
+          
+          .slide-left {
+            animation-delay: 0s;
+          }
+          
+          .slide-right {
+            animation-delay: 0.8s;
           }
         }
       `}</style>
