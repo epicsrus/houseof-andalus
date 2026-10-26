@@ -89,7 +89,7 @@ function BannerOne() {
                             <div className="th-hero-bg" aria-label="House of Andalus introduction background">
                                 <video
                                     className="hero-video"
-                                    src="/assets/img/homev.mp4"
+                                    src="/assets/img/house-of-andalus-final.mp4"
                                     autoPlay
                                     muted
                                     loop
@@ -138,7 +138,7 @@ function BannerOne() {
                             <div className="th-hero-bg" aria-label="House of Andalus introduction background">
                                 <video
                                     className="hero-video"
-                                    src="/assets/img/homev.mp4"
+                                    src="/assets/img/house-of-andalus-final.mp4"
                                     autoPlay
                                     muted
                                     loop
@@ -195,7 +195,7 @@ function BannerOne() {
                             <div className="th-hero-bg" aria-label="House of Andalus introduction background">
                                 <video
                                     className="hero-video"
-                                    src="/assets/img/homev.mp4"
+                                    src="/assets/img/house-of-andalus-final.mp4"
                                     autoPlay
                                     muted
                                     loop
@@ -286,7 +286,7 @@ function BannerOne() {
                                 aria-label="Retreat Introduction Video"
                                 style={{ borderRadius:'10px', boxShadow:'0 6px 30px rgba(106,104,104,0.4)' }}
                             >
-                                <source src="/assets/img/homev.mp4" type="video/mp4" />
+                                <source src="/assets/img/house-of-andalus-final.mp4" type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         </Modal>
