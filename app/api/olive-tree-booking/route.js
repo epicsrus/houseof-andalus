@@ -1,11 +1,6 @@
 import { NextResponse } from 'next/server';
 import { sendMail, formatKeyValueTable, plainTextSummary } from '../../../lib/email';
-
-const priceTable = { 1: 50, 2: 95, 3: 135, 4: 170, 5: 200 };
-const priceForCount = (count) => {
-  if (!Number.isFinite(count) || count <= 0) return 0;
-  return priceTable[count] ?? Math.round(count * 45);
-};
+import { findOlivePackage, formatPrice } from '../../../src/Components/OliveTree/olivePackages';
 
 export async function POST(request) {
   try {
@@ -25,18 +20,21 @@ export async function POST(request) {
         return NextResponse.json({ message: 'Captcha token missing' }, { status: 400 });
     }
 
-    const trees = Number.parseInt(body.treeCount, 10);
-    if (!body.name || !body.email || !trees || trees <= 0) {
-      return NextResponse.json({ message: 'Name, email, and at least 1 tree are required.' }, { status: 400 });
+    // Price is always taken from the package list, never from the browser
+    const selectedPackage = findOlivePackage(body.packageId ?? body.treeCount);
+    if (!body.name || !body.email || !selectedPackage) {
+      return NextResponse.json({ message: 'Name, email, and an olive tree package are required.' }, { status: 400 });
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)) {
       return NextResponse.json({ message: 'Invalid email format.' }, { status: 400 });
     }
 
-    const totalPrice = priceForCount(trees);
+    const trees = selectedPackage.trees;
+    const totalPrice = selectedPackage.price;
     const record = {
       name: body.name,
       email: body.email,
+      packageName: selectedPackage.title,
       treeCount: trees,
       engravingNames: body.engravingNames || '',
       message: body.message || '',
@@ -47,24 +45,26 @@ export async function POST(request) {
     // Simulated persistence (can be replaced with DB insert)
     console.info('Olive tree booking received', record); // eslint-disable-line no-console
 
-    const adminSubject = `Olive Tree Booking: ${record.name} (${record.treeCount} tree${trees > 1 ? 's' : ''})`;
+    const adminSubject = `Olive Tree Booking: ${record.name} (${record.packageName})`;
     const userSubject = 'House of Andalus – Olive Tree Booking Confirmation';
     const tableHtml = formatKeyValueTable({
       Name: record.name,
       Email: record.email,
+      Package: record.packageName,
       'Number of Trees': record.treeCount,
       'Names to Engrave': record.engravingNames,
       'Optional Message': record.message,
-      'Total Price (€)': record.totalPrice,
+      'Total Price': formatPrice(record.totalPrice),
       'Submitted At': record.submittedAt,
     });
     const plainSummary = plainTextSummary({
       Name: record.name,
       Email: record.email,
+      Package: record.packageName,
       Trees: record.treeCount,
       Engraving: record.engravingNames,
       Message: record.message,
-      Total: `€${record.totalPrice}`,
+      Total: formatPrice(record.totalPrice),
       Submitted: record.submittedAt,
     });
 

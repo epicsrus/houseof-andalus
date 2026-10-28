@@ -5,15 +5,24 @@ import Image from "next/image";
 
 import pic1 from '../../../public/assets/img/Book your stay/BuyOlive1.jpeg'
 import pic2 from '../../../public/assets/img/Book your stay/BuyOlive2.jpeg'
+import { olivePackages, formatPrice } from "./olivePackages";
 
+const standardFeatures = ["Handcrafted nameplate", "Annual updates", "Lifetime care"];
 
-const treeOptions = [
-  { count: 1, price: 50, title: "Book 1 Olive Tree" },
-  { count: 3, price: 125, title: "Book 3 Olive Trees" },
-  { count: 5, price: 215, title: "Book 5 Olive Trees" },
-  { count: 10, price: 450, title: "Book 10 Olive Trees" },
-  { count: 25, price: 1150, title: "Book 25 Olive Trees" },
-];
+// Card text per package; prices come from olivePackages.js
+const cardCopy = {
+  exclusive: {
+    badge: "Exclusive",
+    pill: "Limited availability · founding patron",
+    description:
+      "Become a founding patron of the Olive Garden of Andalus. Your olive tree is planted in a prime place in the garden and marked with a premium engraved nameplate, so your name stands at the heart of the grove for generations.",
+    features: ["Premium engraved nameplate", "Annual photo updates", "Lifetime care"],
+  },
+  5: { badge: "Most Popular" },
+};
+
+const describeTrees = (trees) =>
+  `Book ${trees === 1 ? "one" : trees} olive ${trees === 1 ? "tree" : "trees"} that we will plant for you. Includes a personalised nameplate and stewardship updates.`;
 
 const OliveTreeBooking = () => {
   // Flipping state for card
@@ -107,67 +116,57 @@ const OliveTreeBooking = () => {
           </div>
           
           <div className="row g-4">
-            {treeOptions.map((option, index) => (
-              <div className="col-md-6 col-lg-4" key={option.count}>
-                <div className={`olive-card ${index === 2 ? 'featured' : ''}`}>
-                  {index === 2 && <div className="featured-badge">Most Popular</div>}
-                  
+            {olivePackages.map((option) => {
+              const copy = cardCopy[option.id] || {};
+              const isExclusive = option.id === "exclusive";
+              return (
+              <div className="col-md-6 col-xl-3" key={option.id}>
+                <div className={`olive-card ${isExclusive ? 'exclusive' : copy.badge ? 'featured' : ''}`}>
+                  {copy.badge && (
+                    <div className={`featured-badge ${isExclusive ? 'exclusive-badge' : ''}`}>{copy.badge}</div>
+                  )}
+
                   <div className="olive-card__header">
                     <div className="pill">
                       <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
                         <circle cx="6" cy="6" r="5" opacity="0.3"/>
                         <circle cx="6" cy="6" r="2"/>
                       </svg>
-                      Rounded base · ready to plant
+                      {copy.pill || "Rounded base · ready to plant"}
                     </div>
                     <h3>{option.title}</h3>
                     <div className="price-container">
-                      <span className="price">£{option.price.toLocaleString()}</span>
+                      <span className="price">{formatPrice(option.price)}</span>
                       <span className="price-label">total</span>
                     </div>
                   </div>
-                  
+
                   <div className="olive-card__body">
-                    <p>
-                      Book {option.count === 1 ? "one" : option.count} olive{" "}
-                      {option.count === 1 ? "tree" : "trees"} that we will plant for you.
-                      Includes a personalised nameplate and stewardship updates.
-                    </p>
-                    
+                    <p>{copy.description || describeTrees(option.trees)}</p>
+
                     <ul className="benefits-list">
-                      <li>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                          <circle cx="8" cy="8" r="7" fill="#8B7355" opacity="0.1"/>
-                          <path d="M5 8L7 10L11 6" stroke="#8B7355" strokeWidth="2" strokeLinecap="round"/>
-                        </svg>
-                        Handcrafted nameplate
-                      </li>
-                      <li>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                          <circle cx="8" cy="8" r="7" fill="#8B7355" opacity="0.1"/>
-                          <path d="M5 8L7 10L11 6" stroke="#8B7355" strokeWidth="2" strokeLinecap="round"/>
-                        </svg>
-                        Annual updates
-                      </li>
-                      <li>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                          <circle cx="8" cy="8" r="7" fill="#8B7355" opacity="0.1"/>
-                          <path d="M5 8L7 10L11 6" stroke="#8B7355" strokeWidth="2" strokeLinecap="round"/>
-                        </svg>
-                        Lifetime care
-                      </li>
+                      {(copy.features || standardFeatures).map((feature) => (
+                        <li key={feature}>
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <circle cx="8" cy="8" r="7" fill="#8B7355" opacity="0.1"/>
+                            <path d="M5 8L7 10L11 6" stroke="#8B7355" strokeWidth="2" strokeLinecap="round"/>
+                          </svg>
+                          {feature}
+                        </li>
+                      ))}
                     </ul>
                   </div>
-                  
+
                   <Link
                     className="th-btn style1 w-100 text-center book-btn"
-                    href={`/book-and-olive-tree/form?count=${option.count}`}
+                    href={`/book-and-olive-tree/form?package=${option.id}`}
                   >
                     Book Now
                   </Link>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -423,6 +422,21 @@ const OliveTreeBooking = () => {
           font-weight: 700;
           letter-spacing: 0.5px;
           box-shadow: 0 4px 15px rgba(139, 115, 85, 0.4);
+        }
+
+        .olive-card.exclusive,
+        .olive-card.exclusive:hover {
+          border-color: #c9a227;
+        }
+
+        .olive-card.exclusive {
+          background: linear-gradient(180deg, #fffaf0 0%, #ffffff 60%);
+          box-shadow: 0 12px 40px rgba(201, 162, 39, 0.28);
+        }
+
+        .featured-badge.exclusive-badge {
+          background: linear-gradient(135deg, #d4af37 0%, #a8841f 100%);
+          box-shadow: 0 4px 15px rgba(201, 162, 39, 0.45);
         }
 
         .olive-card__header h3 {

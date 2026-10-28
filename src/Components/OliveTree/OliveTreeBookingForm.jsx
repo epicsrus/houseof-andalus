@@ -2,21 +2,18 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-
-const priceTable = { 1: 50, 2: 95, 3: 135, 4: 170, 5: 200 };
-const priceForCount = (count) => {
-  if (!Number.isFinite(count) || count <= 0) return 0;
-  return priceTable[count] ?? Math.round(count * 45);
-};
+import { olivePackages, findOlivePackage, formatPrice } from "./olivePackages";
 
 const OliveTreeBookingForm = () => {
   const searchParams = useSearchParams();
-  const initialCount = Number(searchParams.get("count")) || 1;
+  // ?package= from the cards; ?count= kept so older links to 1, 3 or 5 trees still work
+  const initialPackageId =
+    findOlivePackage(searchParams.get("package") ?? searchParams.get("count"))?.id ?? "1";
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    treeCount: initialCount,
+    packageId: initialPackageId,
     engravingNames: "",
     message: "",
   });
@@ -25,15 +22,14 @@ const OliveTreeBookingForm = () => {
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   useEffect(() => {
-    if (initialCount > 0) {
-      setFormData((prev) => ({ ...prev, treeCount: initialCount }));
-    }
-  }, [initialCount]);
+    setFormData((prev) => ({ ...prev, packageId: initialPackageId }));
+  }, [initialPackageId]);
 
-  const totalPrice = useMemo(
-    () => priceForCount(Number(formData.treeCount || 0)),
-    [formData.treeCount]
+  const selectedPackage = useMemo(
+    () => findOlivePackage(formData.packageId) ?? olivePackages[1],
+    [formData.packageId]
   );
+  const totalPrice = selectedPackage.price;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -67,7 +63,8 @@ const OliveTreeBookingForm = () => {
         body: JSON.stringify({
           ...formData,
           token,
-          treeCount: Number(formData.treeCount),
+          packageId: selectedPackage.id,
+          treeCount: selectedPackage.trees,
           totalPrice,
         }),
       });
@@ -86,7 +83,7 @@ const OliveTreeBookingForm = () => {
         setFormData({
           name: "",
           email: "",
-          treeCount: initialCount,
+          packageId: initialPackageId,
           engravingNames: "",
           message: "",
         });
@@ -142,18 +139,21 @@ const OliveTreeBookingForm = () => {
                   />
                 </div>
                 <div className="col-md-6">
-                  <label className="form-label">Number of Olive Trees</label>
-                  <input
-                    type="number"
-                    min="1"
-                    max="10"
-                    name="treeCount"
-                    value={formData.treeCount}
+                  <label className="form-label">Olive Tree Package</label>
+                  <select
+                    name="packageId"
+                    value={formData.packageId}
                     onChange={handleChange}
-                    className="form-control"
-                  />
+                    className="form-control form-select"
+                  >
+                    {olivePackages.map((pkg) => (
+                      <option key={pkg.id} value={pkg.id}>
+                        {pkg.title} – {formatPrice(pkg.price)}
+                      </option>
+                    ))}
+                  </select>
                   <small className="form-hint">
-                    Pricing auto-updates. Cards set quick presets.
+                    The total updates automatically when you change package.
                   </small>
                 </div>
                 <div className="col-md-6">
@@ -186,13 +186,11 @@ const OliveTreeBookingForm = () => {
               <div className="olive-summary">
                 <div>
                   <p className="summary-label">Selected</p>
-                  <p className="summary-value">
-                    {formData.treeCount} {Number(formData.treeCount) === 1 ? "tree" : "trees"}
-                  </p>
+                  <p className="summary-value">{selectedPackage.label}</p>
                 </div>
                 <div>
                   <p className="summary-label">Total</p>
-                  <p className="summary-value price">€{totalPrice.toLocaleString()}</p>
+                  <p className="summary-value price">{formatPrice(totalPrice)}</p>
                 </div>
               </div>
 
