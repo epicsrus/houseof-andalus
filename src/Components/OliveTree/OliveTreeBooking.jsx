@@ -115,12 +115,12 @@ const OliveTreeBooking = () => {
             </div>
           </div>
           
-          <div className="row g-4 justify-content-center">
+          <div className="row g-4 olive-grid">
             {olivePackages.map((option) => {
               const copy = cardCopy[option.id] || {};
               const isExclusive = option.id === "exclusive";
               return (
-              <div className="col-md-6 col-lg-4" key={option.id}>
+              <div className="col-md-6" key={option.id}>
                 <div className={`olive-card ${isExclusive ? 'exclusive' : copy.badge ? 'featured' : ''}`}>
                   {copy.badge && (
                     <div className={`featured-badge ${isExclusive ? 'exclusive-badge' : ''}`}>{copy.badge}</div>
@@ -422,6 +422,12 @@ const OliveTreeBooking = () => {
           font-weight: 700;
           letter-spacing: 0.5px;
           box-shadow: 0 4px 15px rgba(139, 115, 85, 0.4);
+        }
+
+        .olive-grid {
+          max-width: 1000px;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         .olive-card.exclusive,
