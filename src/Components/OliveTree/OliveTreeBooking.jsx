@@ -15,7 +15,7 @@ const cardCopy = {
     badge: "Exclusive",
     pill: "Limited availability · founding patron",
     description:
-      "Become a founding patron of the Olive Garden of Andalus. Your olive tree is planted in a prime place in the garden and marked with a premium engraved nameplate, so your name stands at the heart of the grove for generations.",
+      "Become a founding patron. Your olive tree is planted in a prime spot with a premium engraved nameplate.",
     features: ["Premium engraved nameplate", "Annual photo updates", "Lifetime care"],
   },
   5: { badge: "Most Popular" },
@@ -115,12 +115,12 @@ const OliveTreeBooking = () => {
             </div>
           </div>
           
-          <div className="row g-4">
+          <div className="row g-4 justify-content-center">
             {olivePackages.map((option) => {
               const copy = cardCopy[option.id] || {};
               const isExclusive = option.id === "exclusive";
               return (
-              <div className="col-md-6 col-xl-3" key={option.id}>
+              <div className="col-md-6 col-lg-4" key={option.id}>
                 <div className={`olive-card ${isExclusive ? 'exclusive' : copy.badge ? 'featured' : ''}`}>
                   {copy.badge && (
                     <div className={`featured-badge ${isExclusive ? 'exclusive-badge' : ''}`}>{copy.badge}</div>
