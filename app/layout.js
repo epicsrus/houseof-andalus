@@ -1,11 +1,30 @@
 import './App.css';
 import RecaptchaProvider from '../src/Components/Providers/RecaptchaProvider';
 
+const siteDescription =
+  'A sanctuary for reflection and growth in the valleys of Andalusia, Spain. Book a stay, join a retreat or sponsor an olive tree.';
+
 export const metadata = {
+  metadataBase: new URL('https://houseofandalus.com'),
   title: 'House of Andalus',
-  description: 'House of Andalus - Travel & Tour Booking Agency',
-  keywords: 'Tour, Travel, Booking, Agency',
+  description: siteDescription,
+  keywords: 'House of Andalus, Andalusia, retreat, olive tree, stay, Spain',
   authors: [{ name: 'House of Andalus' }],
+  // Link previews (WhatsApp, Facebook, LinkedIn, X)
+  openGraph: {
+    type: 'website',
+    siteName: 'House of Andalus',
+    title: 'House of Andalus',
+    description: siteDescription,
+    url: '/',
+    images: [{ url: '/assets/img/og/house-of-andalus.jpg', width: 1200, height: 630, alt: 'House of Andalus, Andalusia' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'House of Andalus',
+    description: siteDescription,
+    images: ['/assets/img/og/house-of-andalus.jpg'],
+  },
 };
 // import css files served from /public/assets via <link> tags below
 
