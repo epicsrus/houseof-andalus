@@ -243,6 +243,9 @@ function HeaderOne() {
                                                     </li>
                                                 </ul>
                                             </li>
+                                            <li>
+                                                <Link href="/farm-shop">Farm Shop</Link>
+                                            </li>
                                             {/* <li className="menu-item-has-children">
                                                 <Link href="#">Destination</Link>
                                                 <ul className="sub-menu">
