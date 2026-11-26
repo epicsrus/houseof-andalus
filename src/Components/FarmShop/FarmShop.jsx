@@ -195,6 +195,7 @@ const FarmShop = () => {
         .range-title {
           max-width: 1100px;
           margin: 0 auto 20px;
+          text-align: center;
           font-size: 22px;
           color: #8b7355;
           font-weight: 700;
