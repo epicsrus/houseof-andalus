@@ -17,7 +17,6 @@ const menuItems = [
       { label: 'Book Olive Tree Form', href: '/book-and-olive-tree/form' },
     ],
   },
-  { label: 'Farm Shop', href: '/farm-shop' },
   { label: 'About Us', href: '/about' },
   { label: 'Gallery', href: '/gallery' },
   {
